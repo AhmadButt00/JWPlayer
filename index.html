@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//ssl.p.jwpcdn.com/player/v/7.7.0/jwplayer.js"></script>
+    <script>
+        jwplayer.key = "uKESt8Bqsj53N8P0kw2jh4tE6+JQpH9kSD8RJXFWX5Y=";
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <label for="urlInput">Url</label>
+        <input type="text" name="urlInput" id="urlInput" placeholder="Enter URL" />
+        <input type="button" value="Play" type="submit" onclick="playVideo()" />
+        <div id="player"></div>
+        <input type="button" value="State" onclick="getPlayerState()" />
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
