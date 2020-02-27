@@ -1,3 +1,7 @@
+let player = jwplayer("player").setup({
+    file: '',
+    controls: true
+});
 function playVideo() {
     let input = document.getElementById("urlInput");
     let inputUrl = document.getElementById("urlInput").value; //get video url input
@@ -25,10 +29,32 @@ function playVideo() {
         console.log("video finished 🚬");
     });
     input.value = '';
-}
 
+    
+}
+function jumpBySeconds(seksToJump) {
+    var time = player.getPosition() + seksToJump;
+    if(time < 0) { 
+        time = 0; 
+    }
+    player.seek(time);
+}
 //Get player current state
 function getPlayerState() {
     let state = jwplayer("player").getState();
     console.log(state);
+}
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+     if (e.keyCode == '37') {
+       jumpBySeconds(-10)
+    }
+    else if (e.keyCode == '39') {
+       jumpBySeconds(10)
+    }
+
 }
